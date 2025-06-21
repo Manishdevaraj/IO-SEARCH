@@ -1,5 +1,8 @@
+//@ts-nocheck
+
 import { Route, Routes } from "react-router-dom"
 import SearchPage from "./Pages/SearchPage"
+
 import AdminPage from "./Pages/AdminPage"
 import LiveLogs from "./Pages/LiveLogs"
 

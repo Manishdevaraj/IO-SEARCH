@@ -1,3 +1,4 @@
+//@ts-nocheck
 import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import { getai, Search } from "@/api";

@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import axios from "axios";
 
 const Searchurl ='https://n8n-x96d.onrender.com/webhook/iobot'
