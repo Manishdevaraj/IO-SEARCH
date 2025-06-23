@@ -3,6 +3,7 @@ import { useState } from "react";
 import SearchBar from "@/components/SearchBar";
 import { getai, Search } from "@/api";
 import { Pagination, PaginationContent, PaginationItem, PaginationNext, PaginationPrevious } from "@/components/ui/pagination";
+import { ClockIcon, SearchIcon } from "lucide-react";
 
 const itemsPerPage = 20;
 
@@ -57,11 +58,11 @@ const SearchPage = () => {
           </div>
         </div>
       )}
-
       {/* Result UI */}
+
       {!loader && !trigger && (
         <div className="min-h-screen bg-[#0D1117] text-white px-4 py-6">
-          <div className="flex items-center justify-center">
+          <div className="flex flex-col md:flex-row items-center justify-center">
             <SearchBar handleSearch={handleSearch} setQuery={setQuery} query={query} icon={false} />
              <div className="flex gap-4 justify-center mt-2">
               <a href="https://manish-devaraj.vercel.app/" className="hover:underline text-[#58A6FF]" target="_blank" rel="noopener noreferrer">🌐 Portfolio</a>
@@ -84,10 +85,15 @@ const SearchPage = () => {
              {results.length === 0 && (
   <div className="col-span-full order-3 mt-6 text-center bg-[#161B22] border border-purple-600 rounded-2xl p-6 shadow-md">
     <h2 className="text-2xl font-semibold text-purple-400 mb-2">Query Queued</h2>
-    <p className="text-sm text-gray-400">
-      IO Bot has added your search to the crawl queue. We’re actively exploring the web
-      to find and index fresh, relevant results for you.
-    </p>
+    <p className="text-sm text-gray-400 flex items-center gap-1">
+  <ClockIcon className="w-4 h-4 text-blue-400" />
+  IO Bot has added your search to the crawl queue. Crawling is scheduled every hour.
+</p>
+<p className="text-sm text-gray-400 flex items-center gap-1">
+  <SearchIcon className="w-4 h-4 text-green-400" />
+  We’re continuously exploring the web to find and index fresh, relevant results just for you.
+</p>
+
     <p className="text-xs text-gray-600 mt-2 italic">
       Come back in a few minutes to check updated results.
     </p>
